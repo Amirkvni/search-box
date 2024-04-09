@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+            boxShadow: {
+              custom:
+                " rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
+            },
+            borderRadius: {
+              custom: "0 25px 25px 0",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body class="bg-clifford h-screen flex items-center justify-center">
+    <div class="search_box w-full max-w-[500px]">
+      <input
+        type="checkbox"
+        id="check"
+        hidden
+        class="[&+div]:checked:max-w-[350px] [&+div>label]:checked:w-[60px] [&+div>label]:checked:bg-[#ff676d] [&+div>label]:checked:text-white [&+div>label]:checked:rounded-custom"
+      />
+
+      <div
+        class="search_box-content bg-white h-[50px] max-w-[50px] mx-auto rounded-[25px] relative shadow-custom transition-all duration-300 ease-in"
+      >
+        <input
+          type="text"
+          placeholder="Type Here ..."
+          class="border-none w-full h-full pl-[14px] outline-none text-lg rounded-[25px]"
+        />
+        <label
+          for="check"
+          class="absolute z-[1] top-0 right-[-2px] bg-white w-[50px] h-[50px] text-center leading-[50px] text-[#ff676d] rounded-[25px]"
+        >
+          <i class="fa-solid fa-search"></i>
+        </label>
+      </div>
+    </div>
+  </body>
+</html>
